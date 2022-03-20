@@ -119,7 +119,7 @@
         ​  ​console​.​log​(​data​) 
          ​  ​try​{ 
           ​  ​const​ ​User​ ​=​ ​db​.​collection​(​`​${​path​}​`​)​; 
-           ​  ​await​ ​User​.​doc​(​name​)​.​set​(​data​)​; 
+           ​  ​await​ ​User​.​doc​(​name​)​.update​​(​data​)​; 
             ​  ​res​.​send​(​{​ ​message​: ​`[[​${​name​}​]] has been impacted.`​ ​}​)​; 
              ​ // ​logger​.​log​(​'info'​,​ ​`[[​${​name​}​]] has been impacted.`​) 
               ​  ​}​ ​catch​(​err​)​{ 
