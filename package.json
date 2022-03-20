@@ -1,0 +1,27 @@
+ 
+  ​ { ​"name"​: ​"​node-js​"​, 
+   ​  ​"version"​: ​"​1.0.0​"​, 
+    ​  ​"description"​: ​"​"​, 
+     ​  ​"main"​: ​"​index.js​"​, 
+      ​  ​"scripts"​: { 
+       ​    ​"test"​: ​"​echo ​\"​Error: no test specified​\"​ && exit 1​"​, 
+        ​    ​"start" ​: ​"​node index.js​"​, 
+         ​    ​"nodeman"​: ​"​node index.js​" 
+          ​  }, 
+           ​  ​"author"​: ​"​"​, 
+            ​  ​"license"​: ​"​ISC​"​, 
+             ​  ​"dependencies"​: { 
+              ​    ​"axios"​: ​"​^0.25.0​"​, 
+               ​    ​"body-parser"​: ​"​^1.19.1​"​, 
+                ​    ​"cors"​: ​"​^2.8.5​"​, 
+                 ​    ​"express"​: ​"​^4.17.2​"​, 
+                  ​    ​"firebase"​: ​"​^8.0.1​"​, 
+                   ​    ​"node-cron"​: ​"​^3.0.0​"​, 
+                    ​    ​"nodeman"​: ​"​^1.1.2​"​, 
+                     ​    ​"pg"​: ​"​^8.7.3​"​, 
+                      ​    ​"request"​: ​"​^2.88.2​"​, 
+                       ​    ​"uuid"​: ​"​^8.3.2​"​, 
+                        ​    ​"winston"​: ​"​^3.5.1​" 
+                         ​  } 
+                          ​}
+
