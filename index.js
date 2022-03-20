@@ -21,7 +21,7 @@
 
 
 ​const​ ​{​User​,​ DataUser​,​ JobList​,​baseUrl​,​ Chart​}​ ​=​ ​require​(​"./config"​)​; 
-​const​ ​{​logger​}​ ​=​ ​require​(​"./logger"​) 
+​//const​ ​{​logger​}​ ​=​ ​require​(​"./logger"​) 
 ​const​ ​{​client​,​ Client​}​ ​=​ ​require​(​"./Elephantsql"​) 
 ​//const {client, Client} = require("./pgdb") 
  
@@ -86,9 +86,9 @@
  
  
 ​/// Chart CRUD by Ketan 16 Feb 2022 
- 
- 
-​// Create Chart or Update Chart 
+
+
+// Create 
  
 ​app​.​post​(​"/Create"​,​ ​async​ ​(​req​,​ ​res​)​ ​=>​ ​{ 
 ​  ​const​ ​data​ ​=​ ​req​.​body​; 
@@ -99,7 +99,7 @@
 ​  ​const​ ​User​ ​=​ ​db​.​collection​(​`​${​path​}​`​)​; 
 ​  ​await​ ​User​.​doc​(​name​)​.​set​(​data​)​; 
 ​  ​res​.​send​(​{​ ​message​: ​`[[​${​name​}​]] has been impacted.`​ ​}​)​; 
-​  ​logger​.​log​(​'info'​,​ ​`[[​${​name​}​]] has been impacted.`​) 
+​  ​//logger​.​log​(​'info'​,​ ​`[[​${​name​}​]] has been impacted.`​) 
 ​  ​}​ ​catch​(​err​)​{ 
 ​    ​console​.​log​(​err​) 
 ​    ​res​.​status​(​500​)​.​json​(​{​Error​ : ​`Create error - ​${​err​}​ `​,​ ​Message​ : ​`​${​err​.​message​}​`​}​)​; 
@@ -107,6 +107,28 @@
 ​  ​} 
  
 ​}​)​; 
+
+
+ 
+ ​// Update 
+   
+    ​app​.​post​(​"/Update"​,​ ​async​ ​(​req​,​ ​res​)​ ​=>​ ​{ 
+     ​  ​const​ ​data​ ​=​ ​req​.​body​; 
+      ​  ​const​ ​name​ ​=​ ​req​.​body​.​name 
+       ​  ​const​ ​path​ ​=​ ​req​.​body​.​path 
+        ​  ​console​.​log​(​data​) 
+         ​  ​try​{ 
+          ​  ​const​ ​User​ ​=​ ​db​.​collection​(​`​${​path​}​`​)​; 
+           ​  ​await​ ​User​.​doc​(​name​)​.​set​(​data​)​; 
+            ​  ​res​.​send​(​{​ ​message​: ​`[[​${​name​}​]] has been impacted.`​ ​}​)​; 
+             ​ // ​logger​.​log​(​'info'​,​ ​`[[​${​name​}​]] has been impacted.`​) 
+              ​  ​}​ ​catch​(​err​)​{ 
+               ​    ​console​.​log​(​err​) 
+                ​    ​res​.​status​(​500​)​.​json​(​{​Error​ : ​`Create error - ​${​err​}​ `​,​ ​Message​ : ​`​${​err​.​message​}​`​}​)​; 
+                 ​       
+                  ​  ​} 
+                    
+                     ​}​)​;
  
 ​// Fetch Chart List  
 ​app​.​post​(​"/Listfetch"​,​ ​async​ ​(​req​,​ ​res​)​ ​=>​ ​{ 
@@ -174,6 +196,6 @@
 ​   ​var​ ​port​ ​=​ ​server​.​address​(​)​.​port 
 ​    
 ​   ​console​.​log​(​"Example app listening at http://%s:%s"​,​ ​host​,​ ​port​) 
-​   ​logger​.​log​(​'info'​,​ ​`Example app listening at ,​${​port​}​.`​) 
+​   //​logger​.​log​(​'info'​,​ ​`Example app listening at ,​${​port​}​.`​) 
 ​}​)
 ​ ​
